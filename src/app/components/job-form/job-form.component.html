@@ -1,0 +1,18 @@
+<form [formGroup]="jobForm" (ngSubmit)="onSubmitJobForm()" >
+    <div class="mb-5">
+        <label class="block mb-2 text-sm font-medium text-gray-900 ">Job Title</label>
+        <input placeholder="E.g Full Stack Software Engineer" formControlName="title" class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    </div>
+    <div class="mb-5">
+        <label class="block mb-2 text-sm font-medium text-gray-900 ">Company</label>
+        <input placeholder="E.g Google Inc." formControlName="company" class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    </div>
+    <div class="mb-5">
+        <label class="block mb-2 text-sm font-medium text-gray-900 ">Job Description</label>
+        <textarea placeholder="Give detailed job requirements and qualifications" formControlName="description" rows="5" class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+    </div>
+    <div class="flex justify-between">
+        <button class="button_accent" type="submit">{{btnText}}</button>
+        <button class="button_outline" type="button" (click)="onCancel()">Cancel</button>
+    </div>
+</form>

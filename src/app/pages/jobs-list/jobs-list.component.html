@@ -1,0 +1,8 @@
+<div class="bg-secondary min-h-screen">
+  <div class="page_bg  grid sm:grid-cols-3 gap-4">
+    <app-job 
+    *ngFor="let job of jobs" [job]="job"
+    [applyButton]="true"
+    ></app-job>
+  </div>
+</div>

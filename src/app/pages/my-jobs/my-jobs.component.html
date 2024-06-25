@@ -1,0 +1,14 @@
+<div class="page_bg">
+    <div class="my-6">
+        <button class="button_accent" routerLink="/create-job">Create New Job</button>
+    </div>
+    <div class=" gap-6 md:grid-cols-3 grid">
+        <app-job
+        *ngFor="let job of jobs" 
+        [job]="job"
+        [cancelButton]="true"
+        [editButton]="true"
+        ></app-job>
+    </div>
+    
+</div>

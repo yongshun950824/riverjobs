@@ -1,0 +1,10 @@
+<div class="page_bg">
+    <h2 class="text-2xl py-10">Update Your Job</h2>
+    <app-job-form
+        btnText="Update Job"
+        (submitForm)="onUpdateJob()"
+        [curr_title]="job?.title"
+        [curr_company]="job?.company"
+        [curr_description]="job?.description"
+    ></app-job-form>
+</div>
