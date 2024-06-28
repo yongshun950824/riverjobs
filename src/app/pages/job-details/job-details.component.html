@@ -1,11 +1,16 @@
-<div class="page_bg pt-10">
-    <a routerLink="/jobs-list">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-      </svg>
+<div class="page_bg pt-10" *ngIf="job$ | async as job">
+    <a routerLink="/jobs-list" >
+     
+    <button routerLink="/jobs-list">Back to Job List</button>
+   
     </a>
-    <h1>{{job?.title}}</h1>
-    <h2>{{job?.company}}</h2>
-    <p>{{job?.description}}</p>
-    <button class="button" routerLink="/job-contact/{{job?.id}}">Apply Now</button>
+    <h1>{{job.title}}</h1>
+    <h2>{{job.company}}</h2>
+    <p>{{job.description}}</p>
+    <!-- <button class="button my-6" [routerLink]="['/job-contact', job.id]">Apply Now</button> -->
+    <button class="button my-6" routerLink="/job-contact/{{job.id}}">Apply Now</button>
+
+</div>
+<div *ngIf="!(job$ | async)">
+  Loading...
 </div>

@@ -8,14 +8,16 @@ import { EditJobComponent } from './pages/edit-job/edit-job.component';
 import { CreateJobComponent } from './pages/create-job/create-job.component';
 
 
+
 const routes: Routes = [
  {path: '', redirectTo: '/jobs-list', pathMatch: 'full'},
  {path: 'jobs-list', component: JobsListComponent},
  {path: 'job-details/:id', component: JobDetailsComponent},
- {path: 'job-contact/:id', component: JobContactComponent},
+ { path: 'job-contact/:id', component: JobContactComponent },
  {path: 'my-jobs', component: MyJobsComponent},
  {path: 'edit-job/:id', component: EditJobComponent},
  {path: 'create-job', component: CreateJobComponent},
+
 ];
 
 @NgModule({

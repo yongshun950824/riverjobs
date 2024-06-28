@@ -3,8 +3,8 @@
   <p>{{job?.company}}</p>
   <p>{{job?.description}}</p>
   <div class="flex justify-between">
-    <button *ngIf="applyButton" class="button_accent mt-4" routerLink="/job-details/{{job?.id}}">Apply</button>
-    <button *ngIf="editButton" class="button mt-4" routerLink="/edit-job/{{job?.id}}">Edit</button>
+    <button *ngIf="applyButton" class="button_accent mt-4" [routerLink]="['/job-details',job?.id]">Apply</button>
+    <button *ngIf="editButton" class="button mt-4" [routerLink]="['/edit-job', job?.id]">Edit</button>
     <button *ngIf="cancelButton" class="button_outline mt-4" (click) ="onDelete()">Delete</button>
   </div>
 </div>

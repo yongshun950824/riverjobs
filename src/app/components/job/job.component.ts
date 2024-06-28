@@ -23,8 +23,9 @@ export class JobComponent implements OnInit {
   ngOnInit() {
     
   }
-  onDelete(): void{
+  onDelete(): void{ 
     alert('You are about to permanently delete this job!');
+    
 
   }
 
