@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Job, fake_jobs } from 'src/app/fake-jobs';
 
 
@@ -25,7 +25,8 @@ export class JobDetailsComponent implements OnInit {
     //console.log(`Job id got is ${jobId}`);
     //this.job = fake_jobs.find(job=>job.id === jobId);
     if (jobId) {
-      this.job$ = this.firestore.collection('jobs').doc(jobId).valueChanges();
+      this.job$ = this.firestore.collection('jobs').doc(jobId).get()
+        .pipe(map((doc) => doc.data()));
       this.job$.subscribe(
         data => {
           if (data) {
