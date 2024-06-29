@@ -25,8 +25,11 @@ export class JobDetailsComponent implements OnInit {
     //console.log(`Job id got is ${jobId}`);
     //this.job = fake_jobs.find(job=>job.id === jobId);
     if (jobId) {
-      this.job$ = this.firestore.collection('jobs').doc(jobId).get()
-        .pipe(map((doc) => doc.data()));
+      this.job$ = this.firestore.collection('jobs').doc(jobId).snapshotChanges()
+        .pipe(map((doc) => ({
+          ...(doc.payload.data() as Job),
+          id: doc.payload.id
+        })));
       this.job$.subscribe(
         data => {
           if (data) {
